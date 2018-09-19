@@ -5,7 +5,7 @@ let count = 0;
 const addButton = function(e){
   e.preventDefault(); //prevent reload
   count++; //increment count by 1
-  const button = `<button id="new">${count}</button>`; //make a string that represents the new button
+  const button = `<button class="new">${count}</button>`; //make a string that represents the new button
   render(button); //render the new button to the page
   render($(this).text()); // render the text from the more button to the page
 }
@@ -14,7 +14,7 @@ const addButton = function(e){
 READ ABOUT JQUERY $(this) http://html-tuts.com/jquery-this-selector */
 const printNum = function(e){
   e.preventDefault();
-  render($(this).text());
+  render(count);
 }
 
 /* append the string argument to the page as html.
@@ -29,4 +29,4 @@ $('#more').on('click', addButton);
 
 /*broken event listener.
  Should render the new button's number to the page when clicked */
-$('#new').on('click', printNum);
+$('#content').on('click', printNum);
